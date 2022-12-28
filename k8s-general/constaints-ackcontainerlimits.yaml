@@ -1,0 +1,18 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: ACKContainerLimits
+metadata:
+  name: container-must-have-limits-k28xz
+spec:
+  enforcementAction: deny
+  match:
+    kinds:
+    - apiGroups:
+      - ""
+      kinds:
+      - Pod
+    namespaces:
+    - test
+  parameters:
+    cpu: 8000m
+    memory: 16Gi
+
